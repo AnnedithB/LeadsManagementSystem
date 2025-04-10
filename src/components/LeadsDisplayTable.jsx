@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 async function getLeads() {
-  const response = await fetch(`http://localhost:8080/leads`, {
+  const response = await fetch(`https://leadsbackend-vmov.onrender.com/leads`, {
     method: "GET",
   });
 
