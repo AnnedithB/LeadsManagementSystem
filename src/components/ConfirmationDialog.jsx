@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+//dynamic confirmation dialog that can be used for any action (submit or delete)
 export default function ConfirmationDialog({
   open,
   title = "Are you sure?",
@@ -7,6 +8,8 @@ export default function ConfirmationDialog({
   onConfirm,
   onCancel,
 }) {
+  // This effect is used to lock the body scroll when the dialog is open
+  // and to unlock it when the dialog is closed.
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";

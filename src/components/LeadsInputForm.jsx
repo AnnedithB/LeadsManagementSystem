@@ -20,9 +20,12 @@ async function submitLead(data) {
 
 // API call to delete a lead; uses .text() since backend returns plain text
 async function deleteLead(id) {
-  const response = await fetch(`https://leadsbackend-vmov.onrender.com/leads/${id}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `https://leadsbackend-vmov.onrender.com/leads/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to delete lead");
@@ -97,8 +100,8 @@ export default function LeadsInputForm() {
       } else if (dialogType === "delete") {
         const res = await deleteLead(form.deleteId);
         console.log("Deleted:", res);
-        alert(res); // Should alert "Lead deleted"
-        // Clear just the delete input field
+        alert(res);
+
         setForm((prev) => ({ ...prev, deleteId: "" }));
       }
     } catch (err) {

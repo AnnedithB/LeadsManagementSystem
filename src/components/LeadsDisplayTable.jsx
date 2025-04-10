@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// API call to fetch leads
+// This function fetches leads from the backend API and returns the data as JSON.
+//low level api call to get leads from the backend API
 async function getLeads() {
   const response = await fetch(`https://leadsbackend-vmov.onrender.com/leads`, {
     method: "GET",
@@ -13,13 +16,15 @@ async function getLeads() {
 }
 
 export default function LeadsInputForm() {
-  const [leads, setLeads] = useState([]);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [leads, setLeads] = useState([]); // Initialize leads state to an empty array
+  const [error, setError] = useState(""); // Initialize error state to an empty string
+  const [loading, setLoading] = useState(false); // Initialize loading state to false
+  const [currentPage, setCurrentPage] = useState(1); // Initialize currentPage state to 1
 
   const leadsPerPage = 3;
 
+  //helps UI component to fetch leads from the backend API and set the leads state
+  //manages states for loading and error
   const fetchLeads = async () => {
     setLoading(true);
     setError("");
@@ -41,6 +46,8 @@ export default function LeadsInputForm() {
     fetchLeads();
   }, []);
 
+  // Calculate pagination values
+  // This calculates the total number of pages based on the number of leads and the number of leads per page.
   const totalPages = Math.ceil(leads.length / leadsPerPage);
   const startIndex = (currentPage - 1) * leadsPerPage;
   const currentLeads = leads.slice(startIndex, startIndex + leadsPerPage);
