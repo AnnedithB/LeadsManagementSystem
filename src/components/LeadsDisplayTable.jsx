@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // This function fetches leads from the backend API and returns the data as JSON.
 //low level api call to get leads from the backend API
 async function getLeads() {
-  const response = await fetch(`https://leadsbackend-vmov.onrender.com/leads`, {
+  const response = await fetch(`https://leadsbackend-production.up.railway.app/leads`, {
     method: "GET",
   });
 

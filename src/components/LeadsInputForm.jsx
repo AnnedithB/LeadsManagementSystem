@@ -3,7 +3,7 @@ import ConfirmationDialog from "./ConfirmationDialog";
 
 // API call to submit a lead
 async function submitLead(data) {
-  const response = await fetch("https://leadsbackend-vmov.onrender.com/leads", {
+  const response = await fetch("https://leadsbackend-production.up.railway.app/leads", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,7 +21,7 @@ async function submitLead(data) {
 // API call to delete a lead; uses .text() since backend returns plain text
 async function deleteLead(id) {
   const response = await fetch(
-    `https://leadsbackend-vmov.onrender.com/leads/${id}`,
+    `https://leadsbackend-production.up.railway.app/leads/${id}`,
     {
       method: "DELETE",
     }
