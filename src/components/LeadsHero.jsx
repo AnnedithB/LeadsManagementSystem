@@ -10,7 +10,7 @@ export default function LeadsHero() {
         <h1 className="text-5xl text-white text-center my-12">
           Leads Management System
         </h1>
-        <div className="flex flex-col md:flex-row justify-between mt-5 bg-white p-5 rounded-lg mx-auto align-center w-[100%] md:w-[85%]">
+        <div className="flex flex-col md:flex-row justify-between mt-5 bg-white p-5 rounded-lg mx-auto align-center w-[100%] md:w-[90%]">
           <div className="w-full md:w-1/2 mr-5 border border-gray-300 rounded-lg p-5 mb-5 md:mb-0">
             <LeadsInputForm />
           </div>
